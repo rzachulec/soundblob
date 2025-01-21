@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(SDLProject)
+
+set(CMAKE_CXX_STANDARD 11)
+
+include_directories(/opt/homebrew/Cellar/sdl2/2.30.11/include)
+link_directories(/opt/homebrew/Cellar/sdl2/2.30.11/lib)
+
+add_executable(sdl sdl.cpp)
+
+target_compile_definitions(sdl PRIVATE -D_THREAD_SAFE)
+target_link_libraries(sdl SDL2)
